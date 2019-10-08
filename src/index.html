@@ -794,7 +794,16 @@
 
 			<div id="musicplayerwrapper">
 				<!-- TODO: This list needs to be generated procedually, perhaps using Grunt -->
-				<audio id="audio" preload="auto" controls="" style="width: 890px;"></audio><a style="cursor:pointer;" id="mp_shuffle">Shuffle</a>
+				<audio id="audio" preload="auto"></audio>
+				<div class="music-player-controls">
+					<div class="button music-control" id="musicpause"></div>
+					<div class="button music-control" id="previous"></div>
+					<div class="button music-control" id="next"></div>
+					<div class="button music-control" id="shuffle"></div>
+					<div class="progressbar">
+							<div class="bar songprogress"></div>
+						</div>
+				</div>
 				<ul id="playlist" style="list-style-type:none; padding-left:0px;">
 					<li class="active"><a href="<%= require('assets/music/Castle_Black_by_Agret_Brisignr.ogg') %>">Castle Black by Agret Brisignr</a></li>
 					<li class="active"><a href="<%= require('assets/music/City_of_Sand_by_Agret_Brisignr.ogg') %>">City of Sand by Agret Brisignr</a></li>

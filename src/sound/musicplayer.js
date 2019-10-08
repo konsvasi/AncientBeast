@@ -13,7 +13,7 @@ export class MusicPlayer {
 		this.audio.volume = 0.25;
 		this.audio.pause();
 
-		$j('#mp_shuffle')
+		$j('#shuffle')
 			.addClass('active')
 			.click(e => {
 				$j(e.currentTarget).toggleClass('active');
