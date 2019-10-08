@@ -20,6 +20,20 @@ export class MusicPlayer {
 				this.shuffle = !this.shuffle;
 			});
 
+		$j('#next-track')
+			.addClass('active')
+			.click(() => {
+				this.playNext();
+			});
+
+		$j('#previous-track').click(() => {
+			this.playPrevious();
+		});
+
+		$j('#pause-track').click(() => {
+			this.stopMusic();
+		});
+
 		this.playlist.find('a').click(e => {
 			e.preventDefault();
 			this.current = $j(e.currentTarget)
@@ -55,6 +69,12 @@ export class MusicPlayer {
 			this.current = 0;
 		}
 
+		let link = this.playlist.find('a')[this.current];
+		this.run($j(link));
+	}
+
+	playPrevious() {
+		this.current = this.current === 0 ? this.tracks.length - 1 : this.current - 1;
 		let link = this.playlist.find('a')[this.current];
 		this.run($j(link));
 	}
